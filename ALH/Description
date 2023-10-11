@@ -1,3 +1,4 @@
-In this folder the simulation resutls of the ALH will be presented. The GW_auto contains the runs with the GW auto-correlation, while the GC_auto contains the runs with the GC auto-correlation.
+In this folder the simulation resutls of the ALH will be presented. The GW_auto contains the runs with the GW auto-correlation,
+while the GC_auto contains the runs with the GC auto-correlation.
 
 The cross_plus_auto, contains the runs that are using both the cross-correlation and the two corresponding auto-correlation Cls.
