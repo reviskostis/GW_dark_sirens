@@ -1,0 +1,19 @@
+ param names	:  100~\omega_{b }\omega_{cdm } n_{s }        10^{+9}A_{s } h             bias_{GC 1 }  bias_{GW 1 }  bias_{GW 2 }  
+ R-1 values	:  0.000400	 0.007477	 0.013799	 0.007449	 0.020811	 0.004281	 0.007105	 0.001147	
+ Best Fit  	:  3.431590e+00	 1.111507e-01	 9.823327e-01	 2.866537e+00	 6.609315e-01	 1.025687e+00	 2.140487e+00	-1.554452e+00	
+ mean      	:  2.399850e+00	 1.184035e-01	 9.569027e-01	 2.379604e+00	 9.633021e-01	 9.529210e-01	 2.458830e+00	 1.170385e+00	
+ sigma     	:  nan	 nan	 7.437191e-02	 5.926210e-01	 nan	 1.852719e-01	 1.316744e+00	 nan	
+
+ 1-sigma - 	:  nan	 nan	-1.000342e-01	-7.040757e-01	 nan	-1.962125e-01	-1.683818e+00	 nan	
+ 1-sigma + 	:  nan	 nan	 4.870958e-02	 4.811663e-01	 nan	 1.743313e-01	 9.496698e-01	 nan	
+ 2-sigma - 	:  nan	 nan	-1.420242e-01	-9.486394e-01	 nan	-3.901131e-01	-2.458539e+00	 nan	
+ 2-sigma + 	:  nan	 nan	 1.798703e-01	 1.080997e+00	 nan	 3.651243e-01	 2.718607e+00	 nan	
+ 3-sigma - 	:  nan	 nan	 nan	 nan	 nan	-4.528479e-01	-2.458539e+00	 nan	
+ 3-sigma + 	:  nan	 nan	 nan	 nan	 nan	 6.202737e-01	 4.318267e+00	 nan	
+
+ 1-sigma > 	:  nan	 nan	 8.568684e-01	 1.675529e+00	 nan	 7.567085e-01	 7.750124e-01	 nan	
+ 1-sigma < 	:  nan	 nan	 1.005612e+00	 2.860771e+00	 nan	 1.127252e+00	 3.408500e+00	 nan	
+ 2-sigma > 	:  nan	 nan	 8.148785e-01	 1.430965e+00	 nan	 5.628080e-01	 2.917163e-04	 nan	
+ 2-sigma < 	:  nan	 nan	 1.136773e+00	 3.460601e+00	 nan	 1.318045e+00	 5.177437e+00	 nan	
+ 3-sigma > 	:  nan	 nan	 nan	 nan	 nan	 5.000731e-01	 2.917163e-04	 nan	
+ 3-sigma < 	:  nan	 nan	 nan	 nan	 nan	 1.573195e+00	 6.777097e+00	 nan	
