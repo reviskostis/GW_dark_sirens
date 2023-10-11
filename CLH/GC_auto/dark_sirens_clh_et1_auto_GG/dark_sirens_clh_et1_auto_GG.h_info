@@ -1,0 +1,19 @@
+ param names	:  100~\omega_{b }\omega_{cdm } n_{s }        10^{+9}A_{s } h             bias_{GC 1 }  
+ R-1 values	:  1.468152	 0.810542	 0.544176	 0.473609	 0.658730	 0.122275	
+ Best Fit  	:  1.962713e+00	 1.061167e-01	 9.710477e-01	 2.522745e+00	 6.447624e-01	 9.954621e-01	
+ mean      	:  2.191182e+00	 1.116884e-01	 9.554965e-01	 2.544277e+00	 6.835556e-01	 9.684896e-01	
+ sigma     	:  nan	 1.210964e-02	 nan	 nan	 nan	 nan	
+
+ 1-sigma - 	:  nan	-1.053833e-02	 nan	 nan	 nan	 nan	
+ 1-sigma + 	:  nan	 1.368096e-02	 nan	 nan	 nan	 nan	
+ 2-sigma - 	:  nan	-2.500269e-02	 nan	 nan	 nan	 nan	
+ 2-sigma + 	:  nan	 2.320363e-02	 nan	 nan	 nan	 nan	
+ 3-sigma - 	:  nan	-3.234917e-02	 nan	 nan	 nan	 nan	
+ 3-sigma + 	:  nan	 2.880873e-02	 nan	 nan	 nan	 nan	
+
+ 1-sigma > 	:  nan	 1.011500e-01	 nan	 nan	 nan	 nan	
+ 1-sigma < 	:  nan	 1.253693e-01	 nan	 nan	 nan	 nan	
+ 2-sigma > 	:  nan	 8.668567e-02	 nan	 nan	 nan	 nan	
+ 2-sigma < 	:  nan	 1.348920e-01	 nan	 nan	 nan	 nan	
+ 3-sigma > 	:  nan	 7.933920e-02	 nan	 nan	 nan	 nan	
+ 3-sigma < 	:  nan	 1.404971e-01	 nan	 nan	 nan	 nan	
