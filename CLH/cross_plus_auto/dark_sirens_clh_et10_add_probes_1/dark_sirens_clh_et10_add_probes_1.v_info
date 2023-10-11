@@ -1,0 +1,6 @@
+param names    	:  R-1        Best fit    mean        sigma       1-sigma -   1-sigma +   2-sigma -   2-sigma +   1-sigma >   1-sigma <   2-sigma >   2-sigma <  
+\omega_{cdm }  	:  1.7288e-02 1.1193e-01  1.1201e-01  nan  nan  nan  nan  nan  nan  nan  nan  nan
+h              	:  2.0324e+00 6.7356e-01  6.7332e-01  nan  nan  nan  nan  nan  nan  nan  nan  nan
+bias_{GC 1 }   	:  1.7532e-01 1.0006e+00  1.0001e+00  nan  nan  nan  nan  nan  nan  nan  nan  nan
+bias_{GW 1 }   	:  2.3426e-02 1.9949e+00  1.9997e+00  6.0307e-02 -6.0045e-02  6.0568e-02 -1.1935e-01  1.2177e-01  1.9397e+00  2.0603e+00  1.8804e+00  2.1215e+00
+bias_{GW 2 }   	:  8.0123e-03 9.8053e-03 -1.5706e-03  1.1854e-01 -1.1794e-01  1.1914e-01 -2.4223e-01  2.3856e-01 -1.1951e-01  1.1757e-01 -2.4380e-01  2.3699e-01
