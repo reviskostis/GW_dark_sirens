@@ -1,0 +1,156 @@
+#-----CLASS v3.2.0 (branch: b'master', hash: b'aa92943e4ab86b56970953589b4897adf2bd0f99')-----
+
+#------Experiments to test (separated with commas)-----
+# To see all the available ones, please look in the
+# montepython/likelihoods folder. Every folder there is a valid likelihood to test.
+data.experiments = ['dark_sirens_bbh', 'dark_sirens_bns', 'dark_sirens_bhns']
+#data.experiments = ['dark_sirens_bbh']
+
+
+#------ Parameter list -------
+# data.parameters[class name] = [mean, min, max, 1-sigma, scale, role]
+# - if min max irrelevant, put to -1 or None (if you want a boundary of -1, use -1.0)
+# - if fixed, put 1-sigma to 0
+# - if scale irrelevant, put to 1, otherwise to the appropriate factor
+# - role is either 'cosmo', 'nuisance' or 'derived'
+
+#Cosmological parameters list
+data.parameters['omega_b']   = [2.249, None, None, 0, 0.01, 'cosmo']
+data.parameters['omega_cdm'] = [0.112, 0.0, None, 0.0016, 1.0, 'cosmo']
+data.parameters['n_s']       = [0.96605,0.8, 1.2, 0, 1, 'cosmo']
+data.parameters['A_s']       = [2.42, None, None, 0, 1e-09, 'cosmo']
+data.parameters['h']         = [0.6737, 0.1, 1.5, 1.65251623e-3, 1.0, 'cosmo']
+data.parameters['tau_reio']  = [0.054, None, None, 0, 1.0, 'cosmo']
+
+
+# Nuisance parameter list, same call, except the name does not have to be a class name
+#data.parameters['bias_GC_1'] = [1.0, 0.5, 2, 1.00e-2, 1, 'nuisance']
+#data.parameters['bias_GC_2'] = [0.5, 0.1, 2, 0, 1, 'nuisance']
+
+
+data.parameters['bias_GW_1'] = [2.00, 0.0, 4.0, 2.0, 1, 'nuisance']
+data.parameters['bias_GW_2'] = [0.00, -2.0, 7.0, 2.0, 1, 'nuisance']
+
+
+
+# Derived parameter list
+#data.parameters['z_reio']       = [0,       -1, -1, 0,1,  'derived']
+#data.parameters['Omega_Lambda'] = [0,       -1, -1, 0,1,  'derived']
+
+#data.cosmo_arguments['YHe'] = 0.2454006
+
+#------ Mcmc parameters ----
+# Number of steps taken, by default (overwritten by the -N command)
+data.N = 10
+# Number of accepted steps before writing to file the chain. Larger means less
+# access to disc, but this is not so much time consuming.
+data.write_step = 5
+
+#-----Likelihood-dark_sirens_bbh-----
+dark_sirens_bbh.data_directory = '/rwthfs/rz/cluster/home/av463215/code/mp_private/data'
+dark_sirens_bbh.fiducial_file = 'dark_sirens_bbh_fiducial.dat'
+dark_sirens_bbh.probe = ['GW']
+dark_sirens_bbh.lmin = 10
+dark_sirens_bbh.lmax_GW = 1000
+dark_sirens_bbh.lmax_GC = 1000
+dark_sirens_bbh.lmax_XC = 1000
+dark_sirens_bbh.lbin = 100
+dark_sirens_bbh.a = 3.037993001675209e-06
+dark_sirens_bbh.b = 2.2341309108864937
+dark_sirens_bbh.c = 0.0017225046181331225
+dark_sirens_bbh.d = 0.8037467711533078
+dark_sirens_bbh.zmin = 0.001
+dark_sirens_bbh.zmax = 1.0
+dark_sirens_bbh.d_L_min = 1e-06
+dark_sirens_bbh.d_L_max = 6798.337327174517
+dark_sirens_bbh.norm_gc = 0.4227153203541678
+dark_sirens_bbh.z_bin_edge = [0.001, 0.1, 0.2, 0.3, 0.5, 1.0]
+dark_sirens_bbh.d_L_bin_edge = [1e-06, 472.9578416169917, 1010.9932058564918, 1602.7058754491356, 2922.4328098445485, 6798.337327174517]
+dark_sirens_bbh.nbin = 5
+dark_sirens_bbh.fsky = 0.3636
+dark_sirens_bbh.merger_events = 18824
+dark_sirens_bbh.gal_per_sqarcmn_GC = 30
+dark_sirens_bbh.nzmax = 200
+dark_sirens_bbh.n_d_Lmax = 200
+dark_sirens_bbh.use_halofit = False
+dark_sirens_bbh.k_min_h_by_Mpc = 0.001
+dark_sirens_bbh.k_max_h_by_Mpc = 50.0
+dark_sirens_bbh.scale_dependent_f = False
+dark_sirens_bbh.bias_model = 'binned_constant'
+
+
+#-----Likelihood-dark_sirens_bns-----
+dark_sirens_bns.data_directory = '/rwthfs/rz/cluster/home/av463215/code/mp_private/data'
+dark_sirens_bns.fiducial_file = 'dark_sirens_bns_fiducial.dat'
+dark_sirens_bns.probe = ['GW']
+dark_sirens_bns.lmin = 10
+dark_sirens_bns.lmax_GW = 1000
+dark_sirens_bns.lmax_GC = 1000
+dark_sirens_bns.lmax_XC = 1000
+dark_sirens_bns.lbin = 100
+dark_sirens_bns.a = 0.00044435369906806047
+dark_sirens_bns.b = 1.6518884966477712
+dark_sirens_bns.c = 0.0023015012330904576
+dark_sirens_bns.d = 2.1303554951271946
+dark_sirens_bns.zmin = 0.001
+dark_sirens_bns.zmax = 1.0
+dark_sirens_bns.d_L_min = 1e-06
+dark_sirens_bns.d_L_max = 6798.337327174517
+dark_sirens_bns.norm_gc = 0.4227153203541678
+dark_sirens_bns.z_bin_edge = [0.001, 0.1, 0.2, 0.3, 0.5, 1.0]
+dark_sirens_bns.d_L_bin_edge = [1e-06, 472.9578416169917, 1010.9932058564918, 1602.7058754491356, 2922.4328098445485, 6798.337327174517]
+dark_sirens_bns.nbin = 5
+dark_sirens_bns.fsky = 0.3636
+dark_sirens_bns.merger_events = 1875
+dark_sirens_bns.gal_per_sqarcmn_GC = 30
+dark_sirens_bns.nzmax = 200
+dark_sirens_bns.n_d_Lmax = 200
+dark_sirens_bns.use_halofit = False
+dark_sirens_bns.k_min_h_by_Mpc = 0.001
+dark_sirens_bns.k_max_h_by_Mpc = 50.0
+dark_sirens_bns.scale_dependent_f = False
+dark_sirens_bns.bias_model = 'binned_constant'
+
+
+#-----Likelihood-dark_sirens_bhns-----
+dark_sirens_bhns.data_directory = '/rwthfs/rz/cluster/home/av463215/code/mp_private/data'
+dark_sirens_bhns.fiducial_file = 'dark_sirens_bhns_fiducial.dat'
+dark_sirens_bhns.probe = ['GW']
+dark_sirens_bhns.lmin = 10
+dark_sirens_bhns.lmax_GW = 1000
+dark_sirens_bhns.lmax_GC = 1000
+dark_sirens_bhns.lmax_XC = 1000
+dark_sirens_bhns.lbin = 100
+dark_sirens_bhns.a = 2.3625094216904513e-05
+dark_sirens_bhns.b = 2.2338025200344314
+dark_sirens_bhns.c = 0.0019060613531452092
+dark_sirens_bhns.d = 1.2384515489837686
+dark_sirens_bhns.zmin = 0.001
+dark_sirens_bhns.zmax = 1.0
+dark_sirens_bhns.d_L_min = 1e-06
+dark_sirens_bhns.d_L_max = 6798.337327174517
+dark_sirens_bhns.norm_gc = 0.4227153203541678
+dark_sirens_bhns.z_bin_edge = [0.001, 0.1, 0.2, 0.3, 0.5, 1.0]
+dark_sirens_bhns.d_L_bin_edge = [1e-06, 472.9578416169917, 1010.9932058564918, 1602.7058754491356, 2922.4328098445485, 6798.337327174517]
+dark_sirens_bhns.nbin = 5
+dark_sirens_bhns.fsky = 0.3636
+dark_sirens_bhns.merger_events = 17175
+dark_sirens_bhns.gal_per_sqarcmn_GC = 30
+dark_sirens_bhns.nzmax = 200
+dark_sirens_bhns.n_d_Lmax = 200
+dark_sirens_bhns.use_halofit = False
+dark_sirens_bhns.k_min_h_by_Mpc = 0.001
+dark_sirens_bhns.k_max_h_by_Mpc = 50.0
+dark_sirens_bhns.scale_dependent_f = False
+dark_sirens_bhns.bias_model = 'binned_constant'
+
+
+#-----------Cosmological-arguments---------
+data.cosmo_arguments.update({'output': ' mPk ', 'z_max_pk': 1.0, 'P_k_max_1/Mpc': 75.0})
+
+
+#--------Default-Configuration------
+data.path['root']	= '/rwthfs/rz/cluster/home/av463215/code/mp_private'
+data.path['MontePython']	= '/rwthfs/rz/cluster/home/av463215/code/mp_private/montepython'
+data.path['data']	= '/rwthfs/rz/cluster/home/av463215/code/mp_private/data'
+data.path['cosmo']	= '/home/av463215/code/class'
