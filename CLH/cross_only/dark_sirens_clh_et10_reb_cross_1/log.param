@@ -1,0 +1,93 @@
+#-----CLASS v3.2.0 (branch: b'master', hash: b'aa92943e4ab86b56970953589b4897adf2bd0f99')-----
+
+#------Experiments to test (separated with commas)-----
+# To see all the available ones, please look in the
+# montepython/likelihoods folder. Every folder there is a valid likelihood to test.
+#data.experiments = ['dark_sirens_bbh', 'dark_sirens_bns', 'dark_sirens_bhns']
+data.experiments = ['dark_sirens_clh_et1']
+
+
+#------ Parameter list -------
+# data.parameters[class name] = [mean, min, max, 1-sigma, scale, role]
+# - if min max irrelevant, put to -1 or None (if you want a boundary of -1, use -1.0)
+# - if fixed, put 1-sigma to 0
+# - if scale irrelevant, put to 1, otherwise to the appropriate factor
+# - role is either 'cosmo', 'nuisance' or 'derived'
+
+#Cosmological parameters list
+data.parameters['omega_b']   = [2.249, None, None, 0, 0.01, 'cosmo']
+data.parameters['omega_cdm'] = [0.112, 0.0, 0.4941, 0.0016, 1.0, 'cosmo']
+data.parameters['n_s']       = [0.96605,0.8, 1.2, 0, 1, 'cosmo']
+data.parameters['A_s']       = [2.42, None, None, 0, 1e-09, 'cosmo']
+data.parameters['h']         = [0.6737, 0.1, 1.5, 1.65251623e-3, 1.0, 'cosmo']
+data.parameters['tau_reio']  = [0.054, None, None, 0, 1.0, 'cosmo']
+
+
+# Nuisance parameter list, same call, except the name does not have to be a class name
+data.parameters['bias_GC_1'] = [1.0, 0.5, 2, 1.00e-2, 1, 'nuisance']
+data.parameters['bias_GC_2'] = [0.5, 0.1, 2, 0, 1, 'nuisance']
+
+
+
+data.parameters['bias_GW_1'] = [2.00, 0, None, 0.20, 1, 'nuisance']
+data.parameters['bias_GW_2'] = [0.00, -1, 1, 0.20, 1, 'nuisance']
+
+data.cosmo_arguments['non linear'] = 'halofit'
+
+# Derived parameter list
+#data.parameters['z_reio']       = [0,       -1, -1, 0,1,  'derived']
+#data.parameters['Omega_Lambda'] = [0,       -1, -1, 0,1,  'derived']
+
+#data.cosmo_arguments['YHe'] = 0.2454006
+
+#------ Mcmc parameters ----
+# Number of steps taken, by default (overwritten by the -N command)
+data.N = 10
+# Number of accepted steps before writing to file the chain. Larger means less
+# access to disc, but this is not so much time consuming.
+data.write_step = 5
+
+#-----Likelihood-dark_sirens_clh_et1-----
+dark_sirens_clh_et1.data_directory = '/rwthfs/rz/cluster/home/av463215/code/mp_private/data'
+dark_sirens_clh_et1.fiducial_file = 'dark_sirens_clh_et1_rebuild_09_09_cross_et10_1.npz'
+dark_sirens_clh_et1.probe = ['GW_GC_XC']
+dark_sirens_clh_et1.lmin = 10
+dark_sirens_clh_et1.lmax_GW = 1000
+dark_sirens_clh_et1.lmax_GC = 1000
+dark_sirens_clh_et1.lmax_XC = 1000
+dark_sirens_clh_et1.Delta_l = 1
+dark_sirens_clh_et1.lbin = 100
+dark_sirens_clh_et1.order_of_neigh = 3
+dark_sirens_clh_et1.a = 4.252788916509177e-06
+dark_sirens_clh_et1.b = 1.946236593901603
+dark_sirens_clh_et1.c = 0.0009204834768531642
+dark_sirens_clh_et1.d = 0.8609929731733813
+dark_sirens_clh_et1.zmin = 0.001
+dark_sirens_clh_et1.zmax = 2.5
+dark_sirens_clh_et1.d_L_min = 1e-08
+dark_sirens_clh_et1.d_L_max = 20893.827527816513
+dark_sirens_clh_et1.norm_gc = 0.4227153203541678
+dark_sirens_clh_et1.z_bin_edge = [0.001, 0.418, 0.56, 0.678, 0.789, 0.9, 1.019, 1.155, 1.324, 1.576, 2.5]
+dark_sirens_clh_et1.d_L_bin_edge = [0.0, 2361.34688328694, 3348.741050455349, 4222.004178001058, 5080.9747220605595, 5971.739928975357, 6957.765441697817, 8119.204159541298, 9607.069559250918, 11903.2037583142, 20893.827527816513]
+dark_sirens_clh_et1.nbin = 10
+dark_sirens_clh_et1.fsky = 0.3636
+dark_sirens_clh_et1.merger_events = 42570593.84827313
+dark_sirens_clh_et1.gal_per_sqarcmn_GC = 30
+dark_sirens_clh_et1.nzmax = 200
+dark_sirens_clh_et1.n_d_Lmax = 200
+dark_sirens_clh_et1.use_halofit = False
+dark_sirens_clh_et1.k_min_h_by_Mpc = 0.001
+dark_sirens_clh_et1.k_max_h_by_Mpc = 50.0
+dark_sirens_clh_et1.scale_dependent_f = False
+dark_sirens_clh_et1.bias_model = 'binned_constant'
+
+
+#-----------Cosmological-arguments---------
+data.cosmo_arguments.update({'non linear': 'halofit', 'output': ' mPk ', 'z_max_pk': 2.5, 'P_k_max_1/Mpc': 75.0})
+
+
+#--------Default-Configuration------
+data.path['root']	= '/rwthfs/rz/cluster/home/av463215/code/mp_private'
+data.path['MontePython']	= '/rwthfs/rz/cluster/home/av463215/code/mp_private/montepython'
+data.path['data']	= '/rwthfs/rz/cluster/home/av463215/code/mp_private/data'
+data.path['cosmo']	= '/home/av463215/code/class'

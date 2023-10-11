@@ -1,0 +1,160 @@
+#-----CLASS v3.2.0 (branch: b'master', hash: b'aa92943e4ab86b56970953589b4897adf2bd0f99')-----
+
+#------Experiments to test (separated with commas)-----
+# To see all the available ones, please look in the
+# montepython/likelihoods folder. Every folder there is a valid likelihood to test.
+#data.experiments = ['dark_sirens_bbh', 'dark_sirens_bns', 'dark_sirens_bhns']
+data.experiments = ['dark_sirens_bhns_clh', 'dark_sirens_bbh_clh', 'dark_sirens_bns_clh']
+
+
+#------ Parameter list -------
+# data.parameters[class name] = [mean, min, max, 1-sigma, scale, role]
+# - if min max irrelevant, put to -1 or None (if you want a boundary of -1, use -1.0)
+# - if fixed, put 1-sigma to 0
+# - if scale irrelevant, put to 1, otherwise to the appropriate factor
+# - role is either 'cosmo', 'nuisance' or 'derived'
+
+#Cosmological parameters list
+data.parameters['omega_b']   = [2.249, None, None, 0, 0.01, 'cosmo']
+data.parameters['omega_cdm'] = [0.112, 0.0, 0.4941, 0.0016, 1.0, 'cosmo']
+data.parameters['n_s']       = [0.96605,0.8, 1.2, 0, 1, 'cosmo']
+data.parameters['A_s']       = [2.42, None, None, 0, 1e-09, 'cosmo']
+data.parameters['h']         = [0.6737, 0.1, 1.5, 1.65251623e-3, 1.0, 'cosmo']
+data.parameters['tau_reio']  = [0.054, None, None, 0, 1.0, 'cosmo']
+
+
+# Nuisance parameter list, same call, except the name does not have to be a class name
+data.parameters['bias_GC_1'] = [1.0, 0.5, 2, 1.00e-2, 1, 'nuisance']
+data.parameters['bias_GC_2'] = [0.5, 0.1, 2, 0, 1, 'nuisance']
+
+
+
+data.parameters['bias_GW_1'] = [2.00, 0, None, 0.20, 1, 'nuisance']
+data.parameters['bias_GW_2'] = [0.00, -1, 1, 0.20, 1, 'nuisance']
+
+data.cosmo_arguments['non linear'] = 'halofit'
+
+# Derived parameter list
+#data.parameters['z_reio']       = [0,       -1, -1, 0,1,  'derived']
+#data.parameters['Omega_Lambda'] = [0,       -1, -1, 0,1,  'derived']
+
+#data.cosmo_arguments['YHe'] = 0.2454006
+
+#------ Mcmc parameters ----
+# Number of steps taken, by default (overwritten by the -N command)
+data.N = 10
+# Number of accepted steps before writing to file the chain. Larger means less
+# access to disc, but this is not so much time consuming.
+data.write_step = 5
+
+#-----Likelihood-dark_sirens_bhns_clh-----
+dark_sirens_bhns_clh.data_directory = '/rwthfs/rz/cluster/home/av463215/code/mp_private/data'
+dark_sirens_bhns_clh.fiducial_file = 'dark_sirens_bhns_clh_rebuild_09_17_cross_hlvik_1.npz'
+dark_sirens_bhns_clh.probe = ['GW_GC_XC']
+dark_sirens_bhns_clh.lmin = 10
+dark_sirens_bhns_clh.lmax_GW = 1000
+dark_sirens_bhns_clh.lmax_GC = 1000
+dark_sirens_bhns_clh.lmax_XC = 1000
+dark_sirens_bhns_clh.Delta_l = 1
+dark_sirens_bhns_clh.lbin = 100
+dark_sirens_bhns_clh.a = 2.3625094216904513e-05
+dark_sirens_bhns_clh.b = 2.2338025200344314
+dark_sirens_bhns_clh.c = 0.0019060613531452092
+dark_sirens_bhns_clh.d = 1.2384515489837686
+dark_sirens_bhns_clh.zmin = 0.001
+dark_sirens_bhns_clh.zmax = 1.0
+dark_sirens_bhns_clh.d_L_min = 1e-06
+dark_sirens_bhns_clh.d_L_max = 6798.337327174517
+dark_sirens_bhns_clh.norm_gc = 0.4227153203541678
+dark_sirens_bhns_clh.z_bin_edge = [0.001, 0.1, 0.2, 0.3, 0.5, 1.0]
+dark_sirens_bhns_clh.d_L_bin_edge = [1e-06, 472.9578416169917, 1010.9932058564918, 1602.7058754491356, 2922.4328098445485, 6798.337327174517]
+dark_sirens_bhns_clh.nbin = 5
+dark_sirens_bhns_clh.fsky = 0.3636
+dark_sirens_bhns_clh.merger_events = 17175
+dark_sirens_bhns_clh.gal_per_sqarcmn_GC = 30
+dark_sirens_bhns_clh.nzmax = 200
+dark_sirens_bhns_clh.n_d_Lmax = 200
+dark_sirens_bhns_clh.use_halofit = False
+dark_sirens_bhns_clh.k_min_h_by_Mpc = 0.001
+dark_sirens_bhns_clh.k_max_h_by_Mpc = 50.0
+dark_sirens_bhns_clh.scale_dependent_f = False
+dark_sirens_bhns_clh.bias_model = 'binned_constant'
+
+
+#-----Likelihood-dark_sirens_bbh_clh-----
+dark_sirens_bbh_clh.data_directory = '/rwthfs/rz/cluster/home/av463215/code/mp_private/data'
+dark_sirens_bbh_clh.fiducial_file = 'dark_sirens_bbh_clh_rebuild_09_17_cross_hlvik_1.npz'
+dark_sirens_bbh_clh.probe = ['GW_GC_XC']
+dark_sirens_bbh_clh.lmin = 10
+dark_sirens_bbh_clh.lmax_GW = 1000
+dark_sirens_bbh_clh.lmax_GC = 1000
+dark_sirens_bbh_clh.lmax_XC = 1000
+dark_sirens_bbh_clh.Delta_l = 1
+dark_sirens_bbh_clh.lbin = 100
+dark_sirens_bbh_clh.a = 3.037993001675209e-06
+dark_sirens_bbh_clh.b = 2.2341309108864937
+dark_sirens_bbh_clh.c = 0.0017225046181331225
+dark_sirens_bbh_clh.d = 0.8037467711533078
+dark_sirens_bbh_clh.zmin = 0.001
+dark_sirens_bbh_clh.zmax = 1.0
+dark_sirens_bbh_clh.d_L_min = 1e-06
+dark_sirens_bbh_clh.d_L_max = 6798.337327174517
+dark_sirens_bbh_clh.norm_gc = 0.4227153203541678
+dark_sirens_bbh_clh.z_bin_edge = [0.001, 0.1, 0.2, 0.3, 0.5, 1.0]
+dark_sirens_bbh_clh.d_L_bin_edge = [1e-06, 472.9578416169917, 1010.9932058564918, 1602.7058754491356, 2922.4328098445485, 6798.337327174517]
+dark_sirens_bbh_clh.nbin = 5
+dark_sirens_bbh_clh.fsky = 0.3636
+dark_sirens_bbh_clh.merger_events = 18824
+dark_sirens_bbh_clh.gal_per_sqarcmn_GC = 30
+dark_sirens_bbh_clh.nzmax = 200
+dark_sirens_bbh_clh.n_d_Lmax = 200
+dark_sirens_bbh_clh.use_halofit = False
+dark_sirens_bbh_clh.k_min_h_by_Mpc = 0.001
+dark_sirens_bbh_clh.k_max_h_by_Mpc = 50.0
+dark_sirens_bbh_clh.scale_dependent_f = False
+dark_sirens_bbh_clh.bias_model = 'binned_constant'
+
+
+#-----Likelihood-dark_sirens_bns_clh-----
+dark_sirens_bns_clh.data_directory = '/rwthfs/rz/cluster/home/av463215/code/mp_private/data'
+dark_sirens_bns_clh.fiducial_file = 'dark_sirens_bns_clh_rebuild_09_17_cross_hlvik_new_1.npz'
+dark_sirens_bns_clh.probe = ['GW_GC_XC']
+dark_sirens_bns_clh.lmin = 10
+dark_sirens_bns_clh.lmax_GW = 1000
+dark_sirens_bns_clh.lmax_GC = 1000
+dark_sirens_bns_clh.lmax_XC = 1000
+dark_sirens_bns_clh.lbin = 100
+dark_sirens_bns_clh.a = 0.00044435369906806047
+dark_sirens_bns_clh.b = 1.6518884966477712
+dark_sirens_bns_clh.c = 0.0023015012330904576
+dark_sirens_bns_clh.d = 2.1303554951271946
+dark_sirens_bns_clh.Delta_l = 1
+dark_sirens_bns_clh.zmin = 0.001
+dark_sirens_bns_clh.zmax = 1.0
+dark_sirens_bns_clh.d_L_min = 1e-06
+dark_sirens_bns_clh.d_L_max = 6798.337327174517
+dark_sirens_bns_clh.norm_gc = 0.4227153203541678
+dark_sirens_bns_clh.z_bin_edge = [0.001, 0.1, 0.2, 0.3, 0.5, 1.0]
+dark_sirens_bns_clh.d_L_bin_edge = [1e-06, 472.9578416169917, 1010.9932058564918, 1602.7058754491356, 2922.4328098445485, 6798.337327174517]
+dark_sirens_bns_clh.nbin = 5
+dark_sirens_bns_clh.fsky = 0.3636
+dark_sirens_bns_clh.merger_events = 1875
+dark_sirens_bns_clh.gal_per_sqarcmn_GC = 30
+dark_sirens_bns_clh.nzmax = 200
+dark_sirens_bns_clh.n_d_Lmax = 200
+dark_sirens_bns_clh.use_halofit = False
+dark_sirens_bns_clh.k_min_h_by_Mpc = 0.001
+dark_sirens_bns_clh.k_max_h_by_Mpc = 50.0
+dark_sirens_bns_clh.scale_dependent_f = False
+dark_sirens_bns_clh.bias_model = 'binned_constant'
+
+
+#-----------Cosmological-arguments---------
+data.cosmo_arguments.update({'non linear': 'halofit', 'output': ' mPk ', 'z_max_pk': 1.0, 'P_k_max_1/Mpc': 75.0})
+
+
+#--------Default-Configuration------
+data.path['root']	= '/rwthfs/rz/cluster/home/av463215/code/mp_private'
+data.path['MontePython']	= '/rwthfs/rz/cluster/home/av463215/code/mp_private/montepython'
+data.path['data']	= '/rwthfs/rz/cluster/home/av463215/code/mp_private/data'
+data.path['cosmo']	= '/home/av463215/code/class'
